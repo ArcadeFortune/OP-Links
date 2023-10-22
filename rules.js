@@ -2,4 +2,5 @@
 const previewBox = {
   height: 150,
   width: 250,
+  hint: "open link"
 }

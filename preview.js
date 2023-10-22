@@ -17,6 +17,8 @@ function createPreview(src, top, left) {
   container.style.width = previewBox.width + 'px';
   container.style.height = previewBox.height + 'px';
 
+  // calculate the middle-top of the container
+  createPreviewHint(parseFloat(container.style.top), parseFloat(container.style.left) + (previewBox.width / 2));
   // onNotHoverAnymore
   container.addEventListener("mouseleave", function (event) {
     event.preventDefault();
@@ -39,7 +41,7 @@ function createPreview(src, top, left) {
   // this is not quiet the goal i was reaching. the different page should think the viewport is the same exact as my webpage. the point is, this area in my webpage, acts as some kind of window to a different page. this is not supposed to be very functional or userfriendly, it should look like a puzzle. does that prompt help you?
   
   // make sure the frame matches with the external page
-  var elementRect = container.getBoundingClientRect();
+  const elementRect = container.getBoundingClientRect();
   iframe.style.top = `-${elementRect.top + parseFloat(window.getComputedStyle(iframe.parentElement).borderWidth)}px`; // Change the "y" view
   iframe.style.left = `-${elementRect.left + Math.round(parseFloat(window.getComputedStyle(iframe.parentElement).borderWidth))}px`; // Change the "x" view
   iframe.style.width = window.innerWidth + 'px'
@@ -51,6 +53,7 @@ function acceptPreview(src) {
 }
 
 function destroyPreview() {
+  destroyPreviewHint();
   const element = document.querySelector('.iframe-container');
   if (element) element.remove();
 }
