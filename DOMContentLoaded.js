@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     link.addEventListener("mouseenter", function (event) {
       event.preventDefault();
 
-      createPreview(url, event.clientY, event.clientX);
+      createPreview(url, event.clientX, event.clientY);
       link.style.cursor = "pointer";
       console.log('preview', url)
     });

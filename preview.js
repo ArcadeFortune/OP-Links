@@ -1,4 +1,4 @@
-function createPreview(src, top, left) {
+function createPreview(src, left, top) {
   destroyPreview();
   // can you write me a javascript function that generates the following element structure:  <div class="iframe-container">  <iframe src="second.html"></iframe>  </div>. the src="" must be a parameter, and the style 'top' and 'left' should be a parameter too.
   // Create the container div element
@@ -10,15 +10,15 @@ function createPreview(src, top, left) {
   iframe.src = src;
 
   // Set the top and left styles
-  container.style.top = top >= (previewBox.height / 2) ? top - (previewBox.height / 2) + 'px' : '1px';
   container.style.left = left >= (previewBox.width / 2) ? left - (previewBox.width / 2) + 'px' : '1px';
+  container.style.top = top >= (previewBox.height / 2) ? top - (previewBox.height / 2) + 'px' : '1px';
 
   // the rules are the rules
   container.style.width = previewBox.width + 'px';
   container.style.height = previewBox.height + 'px';
 
   // calculate the middle-top of the container
-  createPreviewHint(parseFloat(container.style.top), parseFloat(container.style.left) + (previewBox.width / 2));
+  createPreviewHint(parseFloat(container.style.left) + (previewBox.width / 2), parseFloat(container.style.top));
   // onNotHoverAnymore
   container.addEventListener("mouseleave", function (event) {
     event.preventDefault();

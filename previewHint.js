@@ -1,5 +1,5 @@
 // can you write me a javascript function that takes two arguments top and left, in order to create a text at that precise position, which will be always visible to the user.
-function createPreviewHint(top, left) {
+function createPreviewHint(left, top) {
   // Create a new <div> element for the text
   const textElement = document.createElement('div');
   textElement.className = 'iframe-container-hint'; // need this to destroy it later
@@ -8,8 +8,8 @@ function createPreviewHint(top, left) {
   textElement.style.position = 'fixed';
   
   // Set the top and left positions based on the arguments  
-  textElement.style.top = top + 'px';
   textElement.style.left = left + 'px';
+  textElement.style.top = top + 'px';
 
   // gpt sir u forgot the z index
   textElement.style.zIndex = '1000';
