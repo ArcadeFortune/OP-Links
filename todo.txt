@@ -1,7 +1,8 @@
 // add hint text to move mouse up in order to 'click' the link
 // hint text makes previewbox disappear
-center the previewbox around the html element rather than mouse position
+// center the previewbox around the html element rather than mouse position
 animate transition
+make previewHint beautiful
 ? not use window.location.href
 ? custom 'undo' history (with animations ofc)
 custom context menu to disable/enable feature

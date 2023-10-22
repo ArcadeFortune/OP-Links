@@ -10,8 +10,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // onHover
     link.addEventListener("mouseenter", function (event) {
       event.preventDefault();
-
-      createPreview(url, event.clientX, event.clientY);
+      // i think centering it around the element is smarter / looks better than centering it around the mouse
+      const { x, y } = getCenterCoordinatesOfElement(link);
+      createPreview(url, x, y);
       link.style.cursor = "pointer";
       console.log('preview', url)
     });
