@@ -6,11 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>testing</title>
     <link rel="stylesheet" href="cringe.css" />
-    <script src="DOMContentLoaded.js"></script>
+    <script src="DOMContentLoaded.js" defer></script>
     <script src="preview.js"></script>
     <script src="previewHint.js"></script>
     <script src="rules.js"></script>
-    <script src="usefulFunctions.js"></script>
+    <script src="usefulFunctions.js" defer></script>
+    <script src="reloadAllJS.js"></script>
   </head>
   <body>
     <h1>Welcome!</h1>
@@ -19,6 +20,7 @@
     <br />
     <br />
     <br />
-    <span class="load" href="index2.html">Hover over me!</span>
+    <span class="load" href="index2.html">Hover over me!</span><button id="loadSecond">Load Second.html</button>
+    <div class="iframe-container" style="width: 200px; height: 300px;"><iframe src="index2.html" style="width: 200px; height: 300px;"></iframe>  </div>
   </body>
 </html>

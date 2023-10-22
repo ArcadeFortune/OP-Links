@@ -4,12 +4,48 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>testing...</title>
+  <link rel="stylesheet" href="cringe.css" />
   <style>body {background-color: aqua;}</style>
+
+  <script src="DOMContentLoaded.js" defer></script>
+  <script src="preview.js"></script>
+  <script src="previewHint.js"></script>
+  <script src="rules.js"></script>
+  <script src="usefulFunctions.js"></script>
+  <script src="reloadAllJS.js"></script>
 </head>
 <body>
   <h1>How are you?</h1>
   <span>im fine.</span>
   <h6>How about you?</h6>
   <a href="index.html">I'm ok too 👍</a>
+  <span class="load" href="index.html">Hover over me!</span>
+  <button id="countButton">0</button>
+  <script>
+//     let count1 = 0;
+
+// const interval = setInterval(function () {
+//     count1++;
+//     console.log(count1 + " second(s) passed.");
+// }, 1000);
+
+// If you want to stop the interval after a certain amount of time, you can use:
+// clearInterval(interval);
+
+        // Get a reference to the button element
+        var button = document.getElementById('countButton');
+        
+        // Initialize a count variable
+        var count = 0;
+        
+        // Add a click event listener to the button
+        button.addEventListener('click', () => {
+            // Increment the count variable by one
+            count++;
+            
+            // Update the text of the button with the new count
+            button.textContent = count;
+        });
+  </script>
 </body>
 </html>
