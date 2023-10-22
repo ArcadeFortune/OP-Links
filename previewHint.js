@@ -2,12 +2,12 @@
 function createPreviewHint(top, left) {
   // Create a new <div> element for the text
   const textElement = document.createElement('div');
-  textElement.className = 'iframe-container-hint';
+  textElement.className = 'iframe-container-hint'; // need this to destroy it later
+
   // Set the position style to fixed
   textElement.style.position = 'fixed';
   
-  // Set the top and left positions based on the arguments
-  
+  // Set the top and left positions based on the arguments  
   textElement.style.top = top + 'px';
   textElement.style.left = left + 'px';
 
@@ -15,7 +15,7 @@ function createPreviewHint(top, left) {
   textElement.style.zIndex = '1000';
 
   // Set the text content
-  textElement.textContent = previewBox.hint;
+  textElement.textContent = previewBox.hint; // the rules are the rules
 
   // Append the text element to the document body
   document.body.appendChild(textElement);

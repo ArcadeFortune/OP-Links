@@ -22,8 +22,8 @@ function createPreview(src, top, left) {
   // onNotHoverAnymore
   container.addEventListener("mouseleave", function (event) {
     event.preventDefault();
-    // if the mouse is above the container
-    if (event.clientY < container.getBoundingClientRect().top) {
+    // if the mouse (clientY) is above the container (container.getBoundingClientRect().top) and the height of the previewHint (querySelector('.iframe-container-hint').getBoundingClientRect().height)
+    if (event.clientY < container.getBoundingClientRect().top + document.querySelector('.iframe-container-hint').getBoundingClientRect().height) {
       acceptPreview(src)
     }
     else {

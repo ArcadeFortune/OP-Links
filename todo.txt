@@ -1,5 +1,5 @@
 // add hint text to move mouse up in order to 'click' the link
-hint text makes previewbox disappear
+// hint text makes previewbox disappear
 center the previewbox around the html element rather than mouse position
 animate transition
 ? not use window.location.href
