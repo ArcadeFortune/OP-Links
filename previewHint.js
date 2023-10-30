@@ -1,5 +1,8 @@
 // can you write me a javascript function that takes two arguments top and left, in order to create a text at that precise position, which will be always visible to the user.
 function createPreviewHint(left, top) {
+  // iframe with 'iframe-container' class needs to be present in the DOM
+  const div = document.querySelector('.iframe-container');
+
   // Create a new <div> element for the text
   const textElement = document.createElement('div');
   textElement.className = 'iframe-container-hint'; // need this to destroy it later
@@ -17,8 +20,8 @@ function createPreviewHint(left, top) {
   // Set the text content
   textElement.textContent = previewBox.hint; // the rules are the rules
 
-  // Append the text element to the document body
-  document.body.appendChild(textElement);
+  // Append the text element to the preview container
+  div.appendChild(textElement);
 
   // make sure to center the text horizontally
   const elementRect = textElement.getBoundingClientRect();

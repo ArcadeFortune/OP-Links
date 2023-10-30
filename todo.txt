@@ -1,7 +1,9 @@
 // add hint text to move mouse up in order to 'click' the link
 // hint text makes previewbox disappear
 // center the previewbox around the html element rather than mouse position
-animate transition
+// animate transition
+add animation to when accepting preview
+add animation to when declining preview
 make previewHint beautiful
 ? not use window.location.href (very hard)
 ? turn everything into iframes (so i dont have to use window.location.href)

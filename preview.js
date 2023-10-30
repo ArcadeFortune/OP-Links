@@ -17,27 +17,23 @@ function createPreview(src, left, top) {
   container.style.width = previewBox.width + 'px';
   container.style.height = previewBox.height + 'px';
 
-  // calculate the middle-top of the container
-  createPreviewHint(parseFloat(container.style.left) + (previewBox.width / 2), parseFloat(container.style.top));
-
   // onNotHoverAnymore
   container.addEventListener("mouseleave", function (event) {
     event.preventDefault();
     // if the mouse (clientY) is above the container (container.getBoundingClientRect().top) and the height of the previewHint (querySelector('.iframe-container-hint').getBoundingClientRect().height)
     if (event.clientY < container.getBoundingClientRect().top + document.querySelector('.iframe-container-hint').getBoundingClientRect().height) {
+      container.classList.add('accept');
       acceptPreview(src)
     }
     else {
       destroyPreview();
     }
-
-    console.log('leaving', src)
   });
 
   // render the container
   container.appendChild(iframe);
   document.body.appendChild(container);
-    
+
   // in html/javascript, how do i insert a type of 'preview' for another html page? my goal is to have an area in my html page, which is the content of a diffrent html page, but that diffrent html page is zoomed in a way to match the position and size of the area in my initial html page. i hope i explained it well enough.
   // this is not quiet the goal i was reaching. the different page should think the viewport is the same exact as my webpage. the point is, this area in my webpage, acts as some kind of window to a different page. this is not supposed to be very functional or userfriendly, it should look like a puzzle. does that prompt help you?
   
@@ -47,6 +43,10 @@ function createPreview(src, left, top) {
   iframe.style.left = `-${elementRect.left + Math.round(parseFloat(window.getComputedStyle(iframe.parentElement).borderWidth))}px`; // Change the "x" view
   iframe.style.width = window.innerWidth + 'px'
   iframe.style.height = window.innerHeight + 'px'
+
+  createPreviewHint((previewBox.width / 2), 2);
+
+  container.classList.add('animate');
 }
 
 
@@ -108,8 +108,12 @@ function acceptPreview(src) {
   // fetches the new index2.html, resetting all values, does not reload javascript, only the inline javascript will continue to work ///////////////////////////////////////
   // fetch(src).then((res) => {return res.text();}).then(data => {document.open(); document.write(data); document.close(); reloadAllScripts();})
 
+  
+      
   // single best option ///////////////////////////////////////
-  window.location.href = src;
+  setTimeout(() => {
+    window.location.href = src;
+  }, 70);
 }
 
 function destroyPreview() {
